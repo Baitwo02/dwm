@@ -2,10 +2,10 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 6;        /* gaps between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int gappx     = 5;        /* gaps between windows */
+static const unsigned int snap      = 30;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int topbar             = 0;        /* 0 means bottom bar */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 static const char *fonts[]          = { "Hack Nerd Font Mono:pixelsize=18:type=Regular:antialias=true:autohint=true" };
@@ -66,13 +66,23 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *dmenucmd[]   = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *termcmd[]    = { "st", NULL };
+static const char *voltoggle[]  = { "/home/baitwo02/suckless/dwm/scripts/sh-scripts/voltoggle.sh", NULL };
+static const char *voldown[]    = { "/home/baitwo02/suckless/dwm/scripts/sh-scripts/voldown-1.sh", NULL };
+static const char *volup[]      = { "/home/baitwo02/suckless/dwm/scripts/sh-scripts/volup-1.sh", NULL };
+static const char *svoldown[]    = { "/home/baitwo02/suckless/dwm/scripts/sh-scripts/voldown-5.sh", NULL };
+static const char *svolup[]      = { "/home/baitwo02/suckless/dwm/scripts/sh-scripts/volup-5.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_F1,     spawn,          {.v = voltoggle  } },
+	{ MODKEY,                       XK_F2,     spawn,          {.v = voldown    } },
+	{ MODKEY,                       XK_F3,     spawn,          {.v = volup      } },
+	{ MODKEY|ShiftMask,             XK_F2,     spawn,          {.v = svoldown   } },
+	{ MODKEY|ShiftMask,             XK_F3,     spawn,          {.v = svolup     } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd   } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd    } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
