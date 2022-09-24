@@ -68,23 +68,21 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[]    = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]     = { "st", NULL };
-static const char *voltoggle[]   = { "/home/baitwo02/suckless/dwm/scripts/voltoggle.sh" , NULL };
-static const char *voldown[]     = { "/home/baitwo02/suckless/dwm/scripts/voldown-1.sh" , NULL };
-static const char *volup[]       = { "/home/baitwo02/suckless/dwm/scripts/volup-1.sh"   , NULL };
-static const char *svoldown[]    = { "/home/baitwo02/suckless/dwm/scripts/voldown-5.sh" , NULL };
-static const char *svolup[]      = { "/home/baitwo02/suckless/dwm/scripts/volup-5.sh"   , NULL };
+static const char *voltoggle[]   = { "/home/baitwo02/suckless/dwm/scripts/vol-toggle.sh" , NULL };
+static const char *voldown[]     = { "/home/baitwo02/suckless/dwm/scripts/vol-down.sh" , NULL };
+static const char *volup[]       = { "/home/baitwo02/suckless/dwm/scripts/vol-up.sh"   , NULL };
 static const char *lightdown[]   = { "/home/baitwo02/suckless/dwm/scripts/light-down.sh", NULL };
 static const char *lightup[]     = { "/home/baitwo02/suckless/dwm/scripts/light-up.sh"  , NULL };
+static const char *trayercmd[]     = { "/home/baitwo02/suckless/dwm/scripts/t-toggle.sh"  , NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_F1,     spawn,          {.v = voltoggle  } },
 	{ MODKEY,                       XK_F2,     spawn,          {.v = voldown    } },
 	{ MODKEY,                       XK_F3,     spawn,          {.v = volup      } },
-	{ MODKEY|ShiftMask,             XK_F2,     spawn,          {.v = svoldown   } },
-	{ MODKEY|ShiftMask,             XK_F3,     spawn,          {.v = svolup     } },
 	{ MODKEY,                       XK_F5,     spawn,          {.v = lightdown  } },
 	{ MODKEY,                       XK_F6,     spawn,          {.v = lightup    } },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = trayercmd  } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd   } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd    } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
