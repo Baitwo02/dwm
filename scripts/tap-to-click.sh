@@ -1,6 +1,3 @@
-
-#!/bin/bash
-
 # Get id of touchpad and the id of the field corresponding to
 # tapping to click
 id=`xinput list | grep "Touchpad" | cut -d'=' -f2 | cut -d'[' -f1`

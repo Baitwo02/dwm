@@ -1,7 +1,4 @@
-#!/bin/bash
-
 while true; do
-	feh --randomize --bg-fill /home/baitwo02/Pictures/wallpapers/archlinux/*
-
+    /bin/bash ~/suckless/dwm/scripts/wp-change.sh
 	sleep 3m
 done
