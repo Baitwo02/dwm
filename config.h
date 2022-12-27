@@ -9,7 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "Hack Nerd Font Mono:pixelsize=18:type=Regular:antialias=true:autohint=true" };
+static const char *fonts[]          = { "Sarasa Mono SC Nerd:pixelsize=18:type=Regular:antialias=true:autohint=true" };
 static const char dmenufont[]       = "Hack Nerd Font Mono:pixelsize=18:type=Regular:antialias=true:autohint=true";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -68,7 +68,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[]    = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]     = { "st", NULL };
+static const char *termcmd[]     = { "kitty", NULL };
 static const char *voltoggle[]   = { "/home/baitwo02/suckless/dwm/scripts/vol-toggle.sh" , NULL };
 static const char *voldown[]     = { "/home/baitwo02/suckless/dwm/scripts/vol-down.sh" , NULL };
 static const char *volup[]       = { "/home/baitwo02/suckless/dwm/scripts/vol-up.sh"   , NULL };

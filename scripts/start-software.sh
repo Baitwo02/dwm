@@ -19,4 +19,5 @@ cfw &
 # screen shotcut
 flameshot &
 
-st &
+kitty &
+
