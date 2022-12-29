@@ -18,9 +18,9 @@ print_battery() {
     CHARGE_STATUS=$(acpi | sed -r "s/.*: (.*?),.*%.*/\1/")
     BATTERY=$(acpi | sed -r "s/.*, (.*)%.*/\1/")
     if [ "$CHARGE_STATUS" = "Discharging" ]; then
-        printf "$BATTERY"
+        printf "🔋$BATTERY"
     else
-        printf "$BATTERY"
+        printf "🔋$BATTERY"
     fi
 }
 
@@ -32,9 +32,9 @@ print_volume(){
     VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
 	VOLSTAT=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\] \[(.*)\]/\2/")
     if [ "$VOLSTAT" = "off" ]; then
-        printf "$VOL"
+        printf "🔕$VOL"
     else
-        printf "$VOL"
+        printf "🔔$VOL"
     fi
 }
 
@@ -42,6 +42,7 @@ print_date(){
     date '+%Y-%m-%d %H:%M:%S'
 }
 
-xsetroot -name "|arch-$(print_info)|$(print_disk)G|﬙$(print_mem)|$(print_nvidia)|$(print_battery)%|$(print_light)%|$(print_volume)%|$(print_date) "
+xsetroot -name "| arch-$(print_info)|💾$(print_disk)G|💿$(print_mem)|📀$(print_nvidia)|$(print_battery)%|💡$(print_light)%|$(print_volume)%|$(print_date) "
 
 exit 0
+
